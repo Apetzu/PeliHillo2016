@@ -622,7 +622,7 @@ AnimationClip:
     messageOptions: 0
   - time: 37
     functionName: AnimateText
-    data: 'Lucifer: ...so we have to replace them with something else.'
+    data: 'Lucifer: ...so we have to replace them with something else...'
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
