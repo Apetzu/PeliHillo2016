@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class drawer : MonoBehaviour {
 
 	public GameObject player;
+	public GameObject textObj;
 
-	public Text pressEText; 
+	public string pressEText; 
 	public Text foundTextBox;
 
 	playerInventory playerInvScript;
@@ -29,11 +30,13 @@ public class drawer : MonoBehaviour {
 		playerInvScript = player.GetComponent<playerInventory> ();
 		playerInvScript.playerNearDrawer = true;
 		playerInvScript.objectInTheThingie = objectInThisThingie;
-		pressEText.text = "Press 'e' to search drawer.";
+		pressEText = "Press E to search drawer.";
+		textObj.GetComponent<textBox>().TextUpdate(pressEText);
 	}
 	void OnTriggerExit2D(Collider2D other)
 	{
 		playerInvScript.playerNearDrawer = false;
-		pressEText.text = " ";
+		pressEText = " ";
+		textObj.GetComponent<textBox>().TextUpdate(pressEText, false);
 	}
 }
