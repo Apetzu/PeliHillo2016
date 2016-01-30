@@ -5,9 +5,11 @@ public class player : MonoBehaviour
 {
 
 	public float speedX;
+	public float health = 5f;
 	public float speedY;
 	public float defaultSpeed = 1f;
 	public float acceleration = 100f;
+	public Sprite[] playerSprites;
 
 	void Update ()
 	{
@@ -16,11 +18,15 @@ public class player : MonoBehaviour
 		{
 			speedY = Mathf.MoveTowards (speedY, defaultSpeed, defaultSpeed * Time.deltaTime / acceleration);
 			transform.Translate (Vector2.up * speedY);
+			GetComponent<SpriteRenderer>().sprite = playerSprites[0];
+			GetComponent<SpriteRenderer>().sortingOrder = 0;
 		}
 		else if (Input.GetKey (KeyCode.S))
 		{
 			speedY = Mathf.MoveTowards (speedY, -defaultSpeed, defaultSpeed * Time.deltaTime / acceleration);
 			transform.Translate (Vector2.up * speedY);
+			GetComponent<SpriteRenderer>().sprite = playerSprites[1];
+			GetComponent<SpriteRenderer>().sortingOrder = 8;
 		}
 		else if (!Input.GetKey (KeyCode.W) && speedY < 0f)
 		{
@@ -39,11 +45,13 @@ public class player : MonoBehaviour
 		{
 			speedX = Mathf.MoveTowards (speedX, -defaultSpeed, defaultSpeed * Time.deltaTime / acceleration);
 			transform.Translate (Vector2.right * speedX);
+			GetComponent<SpriteRenderer>().sprite = playerSprites[2];
 		}
 		else if (Input.GetKey (KeyCode.D))
 		{
 			speedX = Mathf.MoveTowards (speedX, defaultSpeed, defaultSpeed * Time.deltaTime / acceleration);
 			transform.Translate (Vector2.right * speedX);
+			GetComponent<SpriteRenderer>().sprite = playerSprites[3];
 		}
 		else if (!Input.GetKey (KeyCode.A) && speedX < 0f)
 		{

@@ -18,9 +18,11 @@ public class playerInventory : MonoBehaviour {
 
 	int currentlyDisplayingText;
 
+	public GameObject textObj;
 
 
-	public string[] foundText = new string[] { " "};
+
+	public string foundText;
 	
 	void Start () 
 	{
@@ -34,9 +36,9 @@ public class playerInventory : MonoBehaviour {
 			if (playerNearDrawer == true)
 			{
 				foundTextBox.gameObject.SetActive(true);
-				foundText = new string[] {"you found " + objectInTheThingie};
-				StartCoroutine(AnimateText());
-				StartCoroutine(ResetShit());
+				foundText = "you found " + objectInTheThingie;
+				textObj.GetComponent<textBox>().TextUpdate(foundText);
+				StartCoroutine(ResetText());
 				potScript.inventory.Add (objectInTheThingie);
 			}
 			if (playerNearPot == true)
@@ -45,17 +47,18 @@ public class playerInventory : MonoBehaviour {
 			}
 		}
 	}
-	IEnumerator ResetShit()
+	IEnumerator ResetText()
 	{
-		yield return new WaitForSeconds (2f);
-		foundTextBox.gameObject.SetActive(false);
+		yield return new WaitForSeconds (3f);
+		textObj.GetComponent<textBox> ().TextUpdate ("", false);
+
 	}
-	IEnumerator AnimateText()
+	/*IEnumerator AnimateText()
 	{
 		for (int i = 0; i < (foundText[currentlyDisplayingText].Length+1); i++)
 		{
 			foundTextBox.text = foundText[currentlyDisplayingText].Substring (0, i);
 			yield return new WaitForSeconds (0.03f);
 		}
-	}
+	}*/
 }
