@@ -10,7 +10,13 @@ public class friend : MonoBehaviour
 	public Sprite[] friendSprites;
 	public int friendNum;
 	Vector3 lastFramePos;
+	float speedLimit;
 	
+	void Start()
+	{
+		speedLimit = GameObject.FindWithTag ("Player").GetComponent<player> ().defaultSpeed;
+	}
+
 	void Update()
 	{
 		if (Vector2.Distance(followingObject.transform.position, transform.position) >= radius)
@@ -19,27 +25,28 @@ public class friend : MonoBehaviour
 		velocity = transform.position - lastFramePos;
 		lastFramePos = transform.position;
 
-		if (velocity.x < 0)
-		{
-			// RIGHT
-			GetComponent<SpriteRenderer>().sprite = friendSprites[2];
-		}
-		if (velocity.x > 0)
-		{
-			// LEFT
-			GetComponent<SpriteRenderer>().sprite = friendSprites[3];
-		}
-		if (velocity.y > 0)
+		if (velocity.y > speedLimit)
 		{
 			// UP
 			GetComponent<SpriteRenderer>().sprite = friendSprites[0];
 			GetComponent<SpriteRenderer>().sortingOrder = friendNum;
 		}
-		if (velocity.y < 0)
+		else if (velocity.y < -speedLimit)
 		{
 			// DOWN
 			GetComponent<SpriteRenderer>().sprite = friendSprites[1];
 			GetComponent<SpriteRenderer>().sortingOrder = 8 - friendNum;
+		}
+
+		if (velocity.x < -speedLimit)
+		{
+			// RIGHT
+			GetComponent<SpriteRenderer>().sprite = friendSprites[2];
+		}
+		else if (velocity.x > speedLimit)
+		{
+			// LEFT
+			GetComponent<SpriteRenderer>().sprite = friendSprites[3];
 		}
 	}
 }
