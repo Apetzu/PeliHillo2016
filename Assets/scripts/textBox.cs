@@ -23,6 +23,7 @@ public class textBox : MonoBehaviour {
 		}
 		else
 		{
+			StopAllCoroutines();
 			textObj.color = color;
 			textObj.text = text;
 		}
@@ -44,5 +45,10 @@ public class textBox : MonoBehaviour {
 			textObj.text = animText.Substring (0, i);
 			yield return new WaitForSeconds (textSpeed);
 		}
+	}
+
+	public void EndTheCutscene()
+	{
+		Application.LoadLevel ("Project1");
 	}
 }

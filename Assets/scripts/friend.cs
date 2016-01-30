@@ -19,8 +19,11 @@ public class friend : MonoBehaviour
 
 	void Update()
 	{
-		if (Vector2.Distance(followingObject.transform.position, transform.position) >= radius)
-			transform.position = Vector2.MoveTowards (transform.position, followingObject.transform.position, speed * Time.deltaTime);
+		if (followingObject != null)
+		{
+			if (Vector2.Distance(followingObject.transform.position, transform.position) >= radius)
+				transform.position = Vector2.MoveTowards (transform.position, followingObject.transform.position, speed * Time.deltaTime);
+		}
 
 		velocity = transform.position - lastFramePos;
 		lastFramePos = transform.position;
