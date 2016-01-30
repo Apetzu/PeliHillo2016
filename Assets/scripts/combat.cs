@@ -111,9 +111,9 @@ public class combat : MonoBehaviour {
 	{
 		if (playerTurnBool == true)
 		{
-			combatText = new string[] {"You: Bring out the knifey - 100 000,5 Damage"};
+			combatText = new string[] {"You: Bring out the knifey - 100 000 Damage"};
 			StartCoroutine(AnimateText());
-			enemyScript.health -= 100000.5f;
+			enemyScript.health -= 100000f;
 			shakeEnemy = true;
 			enemyHealth.text = ("health: "+enemyScript.health);
 			playerTurnBool = false;

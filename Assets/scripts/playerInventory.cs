@@ -13,8 +13,10 @@ public class playerInventory : MonoBehaviour {
 	public Text foundTextBox;
 
 	public GameObject pot;
+	public GameObject drawer;
 
 	pot potScript;
+	drawer drawerScript;
 
 	int currentlyDisplayingText;
 
@@ -40,10 +42,13 @@ public class playerInventory : MonoBehaviour {
 				textObj.GetComponent<textBox>().TextUpdate(foundText);
 				StartCoroutine(ResetText());
 				potScript.inventory.Add (objectInTheThingie);
+				drawerScript = drawer.GetComponent<drawer> ();
+				drawerScript.KillCollider();
+				drawerScript.GetComponent<CircleCollider2D>().enabled = false;
 			}
 			if (playerNearPot == true)
 			{
-				//build the masterbossthingfuckery
+				potScript.ShoveStuffInThePot();
 			}
 		}
 	}
@@ -53,12 +58,4 @@ public class playerInventory : MonoBehaviour {
 		textObj.GetComponent<textBox> ().TextUpdate ("", false);
 
 	}
-	/*IEnumerator AnimateText()
-	{
-		for (int i = 0; i < (foundText[currentlyDisplayingText].Length+1); i++)
-		{
-			foundTextBox.text = foundText[currentlyDisplayingText].Substring (0, i);
-			yield return new WaitForSeconds (0.03f);
-		}
-	}*/
 }
