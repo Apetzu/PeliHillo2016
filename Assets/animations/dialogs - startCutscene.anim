@@ -615,7 +615,7 @@ AnimationClip:
   - time: 30
     functionName: AnimateText
     data: 'Lucifer: It''s almost midnight! We don''t have time to gather all the right
-      ingredients...'
+      items to summon the antichrist...'
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
