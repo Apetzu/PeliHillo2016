@@ -10,12 +10,7 @@ public class friend : MonoBehaviour
 	public Sprite[] friendSprites;
 	public int friendNum;
 	Vector3 lastFramePos;
-	float speedLimit;
-	
-	void Start()
-	{
-		speedLimit = GameObject.FindWithTag ("Player").GetComponent<player> ().defaultSpeed;
-	}
+	public float speedLimit;
 
 	void Update()
 	{
