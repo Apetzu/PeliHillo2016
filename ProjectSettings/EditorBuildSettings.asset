@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/scenes/startCutscene.unity
   - enabled: 1
     path: Assets/scenes/Project1.unity
+  - enabled: 1
+    path: Assets/scenes/endCutscene.unity

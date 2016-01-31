@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class combat : MonoBehaviour {
 
 	public Camera MainCamera;
+	public Camera arriveCamera;
 	public Camera combatCamera;
 	public GameObject combatPlayer;
 	public GameObject combatEnemy;
@@ -79,7 +80,7 @@ public class combat : MonoBehaviour {
 		StartCoroutine (EnemyTurn());
 		enemyScript.health = 10f;
 		enemyHealth.text = ("health: "+enemyScript.health);
-		combatText = new string[] {"Encountered a wild doge"};
+		combatText = new string[] {"Encountered a dog"};
 		StartCoroutine (AnimateText ());
 		//combatFadeoutCombat.GetComponent<Animator> ().speed = -0.2f;
 	}
@@ -111,7 +112,7 @@ public class combat : MonoBehaviour {
 	{
 		if (playerTurnBool == true)
 		{
-			combatText = new string[] {"You: Bring out the knifey - 100 000 Damage"};
+			combatText = new string[] {"You: Bring out the knife - 100 000 Damage"};
 			StartCoroutine(AnimateText());
 			enemyScript.health -= 100000f;
 			shakeEnemy = true;
@@ -156,7 +157,7 @@ public class combat : MonoBehaviour {
 	IEnumerator playerWon()
 	{
 		yield return new WaitForSeconds (2.5f);
-		combatText = new string[] {"Doge fainted"};
+		combatText = new string[] {"Dog fainted"};
 		StartCoroutine (AnimateText ());
 		yield return new WaitForSeconds (1);
 		Destroy (currentEnemy);
@@ -169,7 +170,7 @@ public class combat : MonoBehaviour {
 		yield return new WaitForSeconds (2.5f);
 		turnIndicatorPlayer.SetActive (false);
 		turnIndicatorDoge.SetActive (true);
-		combatText = new string[] {"Doge: Bark! bark! woof! woof! - 0 damage"};
+		combatText = new string[] {"Dog: Bark! bark! woof! woof! - 0 damage"};
 		playerMoveScript.health -= 0f;
 		shakePlayer = true;
 		playerHealth.text = ("health: "+playerMoveScript.health);

@@ -32,7 +32,7 @@ public class drawer : MonoBehaviour {
 		playerInvScript.drawer = this.gameObject;
 		playerInvScript.playerNearDrawer = true;
 		playerInvScript.objectInTheThingie = objectInThisThingie;
-		pressEText = "Press E to search drawer.";
+		pressEText = "Press E to search "+this.gameObject.name+".";
 		textObj.GetComponent<textBox>().TextUpdate(pressEText);
 	}
 	void OnTriggerExit2D(Collider2D other)
