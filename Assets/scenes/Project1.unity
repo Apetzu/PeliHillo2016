@@ -1703,7 +1703,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -432, y: 212}
+  m_AnchoredPosition: {x: -432, y: 240}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &386821679
@@ -2615,8 +2615,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c47ed90146dffed42aca06db40ab8226, type: 3}
-  m_Color: {r: .0758621693, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4d816c7440d3fb74f8745bc1ed9fed77, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &691739636
 Transform:
   m_ObjectHideFlags: 0
@@ -2624,8 +2624,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 691739634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 69.1999969, z: 0}
-  m_LocalScale: {x: .5, y: .699999988, z: 1}
+  m_LocalPosition: {x: 1.5, y: 70.0100021, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1158610312}
   m_Father: {fileID: 0}
@@ -3753,7 +3753,7 @@ Transform:
   m_LocalScale: {x: .150000006, y: .150000006, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!1 &996944413
 GameObject:
   m_ObjectHideFlags: 0
@@ -4363,8 +4363,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1158610310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.180000007, y: 5.53999996, z: 0}
-  m_LocalScale: {x: 2, y: .910713196, z: 1}
+  m_LocalPosition: {x: -.180000007, y: 3.32999992, z: 0}
+  m_LocalScale: {x: .74000001, y: .673927784, z: .74000001}
   m_Children: []
   m_Father: {fileID: 691739636}
   m_RootOrder: 0
@@ -5600,7 +5600,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c47ed90146dffed42aca06db40ab8226, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d816c7440d3fb74f8745bc1ed9fed77, type: 3}
   m_Color: {r: .0758621693, g: 1, b: 0, a: 1}
 --- !u!4 &1534093196
 Transform:
@@ -6615,7 +6615,7 @@ Transform:
   m_LocalScale: {x: .150000006, y: .150000006, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1 &1896911804
 GameObject:
   m_ObjectHideFlags: 0
