@@ -63,5 +63,8 @@ public class player : MonoBehaviour
 			speedX = Mathf.MoveTowards(speedX, 0f, defaultSpeed * Time.deltaTime / acceleration);
 			transform.Translate (Vector2.right * speedX);
 		}
+
+		// CLAMPING CAMERA!!!
+		transform.position = new Vector2 (Mathf.Clamp (transform.position.x, -22.5f, 22.5f), Mathf.Clamp (transform.position.y, -13.2f, 13.2f));
 	}
 }
