@@ -51,4 +51,14 @@ public class textBox : MonoBehaviour {
 	{
 		Application.LoadLevel ("Project1");
 	}
+
+	public void InstantSpeed()
+	{
+		textSpeed = 0f;
+	}
+
+	public void EndTheGame()
+	{
+		Application.Quit();
+	}
 }
